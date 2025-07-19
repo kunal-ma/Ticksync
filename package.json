@@ -1,0 +1,22 @@
+{
+  "name": "ticksync",
+  "displayName": "Ticksync",
+  "description": "Time tracker for VSCode",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kunal-ma/ticksync.git"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "typescript": "^5.8.3"
+  }
+}
