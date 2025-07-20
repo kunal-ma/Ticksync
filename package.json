@@ -8,6 +8,7 @@
   "version": "0.0.1",
   "license": "SEE LICENSE IN `LICENSE`",
   "categories": ["Other"],
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/kunal-ma/ticksync.git"
