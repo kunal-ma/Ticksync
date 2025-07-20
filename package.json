@@ -2,7 +2,12 @@
   "name": "ticksync",
   "displayName": "Ticksync",
   "description": "Time tracker for VSCode",
+  "author": {
+    "name": "kunal-ma"
+  },
   "version": "0.0.1",
+  "license": "SEE LICENSE IN `LICENSE`",
+  "categories": ["Other"],
   "repository": {
     "type": "git",
     "url": "https://github.com/kunal-ma/ticksync.git"
@@ -13,6 +18,29 @@
   "main": "./out/extension.js",
   "scripts": {
     "compile": "tsc -p ./"
+  },
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "configuration": {
+      "title": "Ticksync",
+      "properties": {
+        "ticksync.enableCloudSync": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable daily sync to GitHub Gist"
+        },
+        "ticksync.githubToken": {
+          "type": "string",
+          "default": "",
+          "description": "GitHub Personal Access Token (Gist scope only)"
+        },
+        "ticksync.gistId": {
+          "type": "string",
+          "default": "",
+          "description": "ID of the GitHub Gist to sync usage time"
+        }
+      }
+    }
   },
   "devDependencies": {
     "@types/node": "20.x",
