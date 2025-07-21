@@ -72,7 +72,7 @@ function updateStatusBar() {
     const sessionSeconds = Math.floor((Date.now() - startTime) / 1000);
     const totalSeconds = savedSeconds + sessionSeconds;
 
-    statusBarItem.text = `⏱ ${formatTime(totalSeconds)}`;
+    statusBarItem.text = `⏱  ${formatTime(totalSeconds)}`;
     statusBarItem.show();
 }
 
