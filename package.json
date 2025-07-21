@@ -1,12 +1,14 @@
 {
   "name": "ticksync",
   "displayName": "Ticksync",
-  "description": "Time tracker for VSCode",
+  "description": "Track, display, and sync your total VS Code usage time",
   "author": {
-    "name": "kunal-ma"
+    "name": "Kunal M.A.",
+    "url": "https://github.com/kunal-ma"
   },
-  "version": "0.0.1",
-  "license": "SEE LICENSE IN `LICENSE`",
+  "publisher": "kunal-ma",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE",
   "categories": ["Other"],
   "icon": "images/icon.png",
   "repository": {
