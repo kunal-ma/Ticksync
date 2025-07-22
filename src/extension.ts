@@ -12,10 +12,7 @@ const trackerPath = path.join(os.homedir(), '.vscode-tools', 'tracker.json');
 export function activate(context: vscode.ExtensionContext) {
     startTime = Date.now();
 
-    statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 10);
-    statusBarItem.tooltip = 'Total VS Code Usage Time';
-    context.subscriptions.push(statusBarItem);
-
+    initializeStatusBarItem(context);
     updateStatusBar();
     setInterval(updateStatusBar, 60000);
 
@@ -25,6 +22,29 @@ export function activate(context: vscode.ExtensionContext) {
     if (syncEnabled) {
         checkDailyGistSync();
     }
+
+    vscode.workspace.onDidChangeConfiguration(e => {
+    if (e.affectsConfiguration('ticksync.statusBar')) {
+        statusBarItem.dispose();
+        initializeStatusBarItem(context);
+        updateStatusBar();
+        }
+    });
+}
+
+// ---- Initialize Status Bar ----
+
+function initializeStatusBarItem(context: vscode.ExtensionContext) {
+    const alignmentSetting = vscode.workspace.getConfiguration().get<string>('ticksync.statusBar.alignment', 'left');
+    const itemPriority = vscode.workspace.getConfiguration().get<number>('ticksync.statusBar.priority', 10);
+
+    const itemAlign = alignmentSetting.toLowerCase() === 'right' 
+        ? vscode.StatusBarAlignment.Right 
+        : vscode.StatusBarAlignment.Left;
+
+    statusBarItem = vscode.window.createStatusBarItem(itemAlign, itemPriority);
+    statusBarItem.tooltip = 'Total VS Code Usage Time';
+    context.subscriptions.push(statusBarItem);
 }
 
 // ---- Tracker Data Handling ----

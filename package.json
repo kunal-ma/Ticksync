@@ -7,7 +7,7 @@
     "url": "https://github.com/kunal-ma"
   },
   "publisher": "kunal-ma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "categories": ["Other"],
   "icon": "images/icon.png",
@@ -27,6 +27,20 @@
     "configuration": {
       "title": "Ticksync",
       "properties": {
+        "ticksync.statusBar.alignment": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "default": "left",
+          "description": "Alignment of the status bar item."
+        },
+        "ticksync.statusBar.priority": {
+          "type": "number",
+          "default": 10,
+          "description": "Priority of the status bar item. Higher numbers are shown more to the left/right depending on alignment."
+        },
         "ticksync.enableCloudSync": {
           "type": "boolean",
           "default": false,

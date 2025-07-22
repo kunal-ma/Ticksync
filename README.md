@@ -27,7 +27,24 @@ Once installed, **Ticksync starts tracking your active coding time automatically
 
 ## Configuration
 
-Ticksync works out of the box for local usage, but you can optionally enable the built-in GitHub Gist sync for **cloud backups** and **dynamic badge integration**.
+Ticksync works out of the box for local usage, but you can customize the **position** and the **order** of the status bar item. Moreover, you can enable the built-in GitHub Gist sync for **cloud backups** and **dynamic badge integration**.
+
+### Customization
+
+- **Using the Settings UI**:  
+  Open the settings (`Ctrl + ,`), search for "Ticksync", and:
+  - Set the **Status Bar: Alignment** (`left` or `right`)
+  - Set the **Status Bar: Priority** (e.g. `10`)
+
+- **Or manually via `settings.json`**:  
+  Add the following to your user settings:
+
+  ```json
+  {
+    "ticksync.statusBar.alignment": "left", // "left" or "right" 
+    "ticksync.statusBar.priority": 10 // Higher = more to the left/right
+  }
+  ```
 
 ### GitHub Gist Integration
 
